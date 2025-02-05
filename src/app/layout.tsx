@@ -3,8 +3,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { josefinSans, lato } from "@/font";
-import { ClerkProvider } from "@clerk/nextjs";
-// import { usePathname } from "next/navigation";
 import { AdminSidebar } from "@/components/AdminSidebar";
 import { AdminHeader } from "@/components/AdminHeader";
 import { Toaster } from "sonner";
@@ -46,14 +44,7 @@ export default function RootLayout({
   }, []); // Trigger effect on route change
 
   
-  // const isAdmin = pathname.startsWith("/admin");
-  // const isOrders = pathname.startsWith("/orders");
-  // const isCustomers = pathname.startsWith("/customers");
-  // const isStatistics = pathname.startsWith("/product-data");
-  // const isReviews = pathname.startsWith("/reviews");
-  // const studioAndHome = !isAdmin && !isOrders && !isCustomers && !isStatistics && !isReviews
-  return (
-    <ClerkProvider>
+  return (    
     <html lang="en" className={josefinSans.className}>
       <body
         className={`${geistSans.variable} ${geistMono.variable}  ${josefinSans.className} ${lato.className} antialiased`}
@@ -70,7 +61,7 @@ export default function RootLayout({
           </div>     
       </body>
     </html>
-    </ClerkProvider >
+   
   );
 } 
 
