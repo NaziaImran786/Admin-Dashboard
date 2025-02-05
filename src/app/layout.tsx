@@ -8,6 +8,7 @@ import { AdminHeader } from "@/components/AdminHeader";
 import { Toaster } from "sonner";
 import { useEffect, useState } from "react";
 import Loading from "./loading";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 const geistSans = localFont({
@@ -45,6 +46,7 @@ export default function RootLayout({
 
   
   return (    
+    <ClerkProvider>
     <html lang="en" className={josefinSans.className}>
       <body
         className={`${geistSans.variable} ${geistMono.variable}  ${josefinSans.className} ${lato.className} antialiased`}
@@ -61,7 +63,7 @@ export default function RootLayout({
           </div>     
       </body>
     </html>
-   
+    </ClerkProvider>
   );
 } 
 
